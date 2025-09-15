@@ -85,8 +85,9 @@ public class MainWindow {
                                 textArea.append('\n' + OSUtils.getPrompt());
                             } else {
                                 String output = terminal.executeCommand(input, window);
+
                                 if (output.equals("")) {
-                                    textArea.append(OSUtils.getPrompt());
+                                    textArea.append('\n' + OSUtils.getPrompt());
                                 } else {
                                     textArea.append('\n' + output + '\n' + OSUtils.getPrompt());
                                 }

@@ -13,6 +13,8 @@ public class CommandFactory {
             case "ls" -> new LsCommand();
             case "pwd" -> new PwdCommand();
             case "echo" -> new EchoCommand();
+            case "cat" -> new CatCommand();
+            case "touch" -> new TouchCommand();
             default -> null;
         };
      }

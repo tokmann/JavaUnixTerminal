@@ -7,6 +7,7 @@ import core.vfs.VfsNode;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.io.File;
 
@@ -40,11 +41,29 @@ public class Terminal {
                 this.currentDir = System.getProperty("user.dir");
             }
         } else {
-            this.currentDir = System.getProperty("user.dir");
+            try {
+                vfsRoot = new VfsDirectory("");
+                VfsDirectory home = new VfsDirectory("home");
+                vfsRoot.addChild(home);
+
+                VfsFile readme = new VfsFile(
+                        "README.txt",
+                        "Добро пожаловать в эмулятор!".getBytes(java.nio.charset.StandardCharsets.UTF_8)
+                );
+                home.addChild(readme);
+
+                currentDir = "/";
+            } catch (Exception e) {
+                currentDir = System.getProperty("user.dir");
+            }
         }
     }
 
     public boolean hasVfs() { return vfsRoot != null; }
+
+    public VfsNode resolvePath(String path) {
+        return resolveVfsPath(path);
+    }
 
     public String getCurrentDir() {
         return currentDir;
@@ -58,7 +77,7 @@ public class Terminal {
             else p = currentDir + p;
         }
         String[] parts = p.split("/");
-        java.util.LinkedList<String> stack = new java.util.LinkedList<>();
+        LinkedList<String> stack = new LinkedList<>();
         for (String part : parts) {
             if (part.isEmpty() || ".".equals(part)) continue;
             if ("..".equals(part)) {

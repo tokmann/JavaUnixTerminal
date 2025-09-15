@@ -6,11 +6,10 @@ import core.Terminal;
 import javax.swing.*;
 import java.util.List;
 
-public class EchoCommand implements Command {
+public class TouchCommand implements Command {
 
     @Override
     public String execute(List<String> args, JFrame window, Terminal terminal) {
-        if (args.size() < 2) return "";
-        return String.join(" ", args.subList(1, args.size()));
+        return "";
     }
 }
