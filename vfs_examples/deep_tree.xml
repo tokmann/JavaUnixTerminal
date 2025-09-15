@@ -1,0 +1,12 @@
+<vfs>
+    <dir name="/">
+        <dir name="level1">
+            <dir name="level2">
+                <dir name="level3">
+                    <file name="deep.txt" encoding="base64">0J/RgNC40LLQtdGCLQ==</file>
+                </dir>
+            </dir>
+        </dir>
+        <file name="root.txt" encoding="base64">0J/RgNC40LLQtdGCLQ==</file>
+    </dir>
+</vfs>

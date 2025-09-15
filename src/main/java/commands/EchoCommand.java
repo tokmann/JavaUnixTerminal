@@ -6,11 +6,10 @@ import core.Terminal;
 import javax.swing.*;
 import java.util.List;
 
-public class LsCommand implements Command {
+public class EchoCommand implements Command {
     @Override
     public String execute(List<String> args, JFrame window, Terminal terminal) {
-        if (args.size() == 1) return "ls: missing arguments";
-        String directory = args.get(1);
-        return "ls " + directory;
+        if (args.size() <= 1) return "";
+        return String.join(" ", args.subList(1, args.size()));
     }
 }

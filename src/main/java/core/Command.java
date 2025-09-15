@@ -1,7 +1,8 @@
 package core;
 
 import javax.swing.*;
+import java.util.List;
 
 public interface Command {
-    String execute(String[] args, JFrame window, Terminal terminal);
+    String execute(List<String> args, JFrame window, Terminal terminal);
 }

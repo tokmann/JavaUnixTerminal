@@ -2,16 +2,15 @@ package commands;
 
 import core.Command;
 import core.Terminal;
-import utils.OSUtils;
 
 import javax.swing.*;
 import java.awt.*;
-import java.net.UnknownHostException;
+import java.util.List;
 
 public class ClearCommand implements Command {
 
     @Override
-    public String execute(String[] args, JFrame window, Terminal terminal) {
+    public String execute(List<String> args, JFrame window, Terminal terminal) {
         JTextArea textArea = findTextArea(window);
         if (textArea != null) {
             textArea.setText("");

@@ -1,0 +1,13 @@
+pwd
+ls
+cat hello.txt
+
+cat nofile.txt
+
+cd level1
+pwd
+ls
+cd level2/level3
+pwd
+ls
+cat deep.txt

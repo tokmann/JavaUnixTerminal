@@ -12,6 +12,7 @@ public class CommandFactory {
             case "exit" -> new ExitCommand();
             case "ls" -> new LsCommand();
             case "pwd" -> new PwdCommand();
+            case "echo" -> new EchoCommand();
             default -> null;
         };
      }

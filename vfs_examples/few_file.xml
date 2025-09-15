@@ -1,0 +1,11 @@
+<vfs>
+    <dir name="/">
+        <file name="readme.txt" encoding="base64">0J/RgNC40LLQtdGCLQ==</file>
+        <dir name="bin">
+            <file name="exec.dat" encoding="base64">AQIDBA==</file>
+        </dir>
+        <dir name="docs">
+            <file name="notes.txt" encoding="base64">0J/RgNC40LLQtdGCLQ==</file>
+        </dir>
+    </dir>
+</vfs>
